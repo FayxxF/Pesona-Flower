@@ -31,3 +31,11 @@ function kchange1() {
 function kchange2() {
     document.getElementById('pic2').src='/frontend/images/pKrisan.jpg';
 }
+
+document.getElementById("button_detail").onclick = function(){
+    location.href = "/detail.html"
+}
+
+document.getElementById("button_about").onclick = function(){
+    location.href = "/about.html"
+}
