@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+ 
+        <!-- CSS -->
+        <link rel="stylesheet" href="edit.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg fixed-top" id="navbar" style="background-color: white;">
+            <div class="ps-5 pe-5 container-fluid">
+                <a class="navbar-brand" id="nav-brand" href="#">back</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            
+            </div>
+        </nav>
+        
+        <div class="container min-vh-100 d-flex justify-content-center align-items-center">
+            <form class="form">
+                <div class="mb-3">
+                  <label for="inputHarga" class="form-label">Harga</label>
+                  <input type="email" class="form-control" id="hargaBunga">
+                </div>
+                <div class="mb-3">
+                  <label for="inputNama" class="form-label">Nama Bunga</label>
+                  <input type="email" class="form-control" id="namaBunga">
+                </div>
+                <div class="mb-3">
+                    <label for="inputFoto" class="form-label">Foto</label> <br>
+                    <span>
+                        <i class="fa fa-cloud-upload text-light fa-5x" aria-hidden="true"></i>
+                    </span>
+                    <input type="file" id="file" class="text-dark">
+                </div>
+                <div class="mb-3">
+                  <label for="inputDetail" class="form-label">Detail</label>
+                  <input type="password" class="form-control" id="detailBunga">
+                </div>
+                <div class="mb-3">
+                  <label for="inputDeskripsi" class="form-label">Deskripsi</label>
+                  <input type="password" class="form-control" id="deskripsiBunga">
+                </div>
+                <div class="mb-3">
+                  <label for="inputCara" class="form-label">Cara Merawat</label>
+                  <input type="password" class="form-control" id="caraMerawat">
+                </div>
+             
+                <button type="submit" class="edit">Edit</button>
+              </form>
+        </div>
+    </body>
+</html>
