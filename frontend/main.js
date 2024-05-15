@@ -33,9 +33,9 @@ function kchange2() {
 }
 
 document.getElementById("button_detail").onclick = function(){
-    location.href = "/detail.html"
+    location.href = "detail.html"
 }
 
 document.getElementById("button_about").onclick = function(){
-    location.href = "/about.html"
+    location.href = "about.html"
 }
