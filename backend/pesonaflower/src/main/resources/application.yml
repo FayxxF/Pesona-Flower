@@ -3,10 +3,13 @@ spring:
     name: pesonaflower
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
+    show-sql: true
   datasource:
     url: jdbc:postgresql://localhost:5432/db_pesona_flower
     username: postgres
     password: 123
+  thymeleaf:
+    suffix: .html
 
 
