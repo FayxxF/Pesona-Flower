@@ -14,10 +14,12 @@ import lombok.NoArgsConstructor;
 @Table(name = "detail")
 public class Detail {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE) //kalo error ganti ke auto
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nama_bunga;
     private String foto_bunga;
     private String detail_bunga;
     private String deskripsi_bunga;
     private String merawat_bunga;
+    private String harga_bunga;
 }

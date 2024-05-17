@@ -24,13 +24,51 @@ public class DetailServiceImpl implements DetailService {
         return details.stream().map((detail) -> mapToDetailsDto(detail)).collect(Collectors.toList());
     }
 
-    private DetailDto mapToDetailsDto(Detail detail){
-        DetailDto detailDto = DetailDto.builder()
+    @Override
+    public Detail saveDetail(DetailDto detailDto) { //saving detail yg ditambahin
+        Detail detail = mapToDetail(detailDto);
+        return detailRepository.save(detail);
+    }
+
+    @Override
+    public DetailDto findDetailById(Long detailId) {
+        Detail detail = detailRepository.findById(detailId).get();
+        return mapToDetailsDto(detail);
+    }
+
+    @Override
+    public void updateDetail(DetailDto detailDto) { //updating, instansiasi maptodetail
+        Detail detail = mapToDetail(detailDto);
+        detailRepository.save(detail);
+    }
+
+    @Override
+    public void delete(long detailId) {
+        detailRepository.deleteById(detailId);
+    }
+
+    private Detail mapToDetail(DetailDto detail) { //mapping aka converting
+        Detail detailDto = Detail.builder()
+                .id(detail.getId())
                 .nama_bunga(detail.getNama_bunga())
                 .foto_bunga(detail.getFoto_bunga())
                 .detail_bunga(detail.getDetail_bunga())
                 .deskripsi_bunga(detail.getDeskripsi_bunga())
                 .merawat_bunga(detail.getMerawat_bunga())
+                .harga_bunga(detail.getHarga_bunga())
+                .build();
+        return detailDto;
+    }
+
+    private DetailDto mapToDetailsDto(Detail detail){ //mapping aka converting
+        DetailDto detailDto = DetailDto.builder()
+                .id(detail.getId())
+                .nama_bunga(detail.getNama_bunga())
+                .foto_bunga(detail.getFoto_bunga())
+                .detail_bunga(detail.getDetail_bunga())
+                .deskripsi_bunga(detail.getDeskripsi_bunga())
+                .merawat_bunga(detail.getMerawat_bunga())
+                .harga_bunga(detail.getHarga_bunga())
                 .build();
         return detailDto;
 
