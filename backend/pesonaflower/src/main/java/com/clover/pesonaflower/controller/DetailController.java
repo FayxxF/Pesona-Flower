@@ -24,27 +24,27 @@ public class DetailController {
         this.detailService = detailService;
     }
 
-    @GetMapping("/") //Displaying Detail Page
+    @GetMapping("/detail") //Displaying Detail Page
     public String listDetails(Model model){
         List<DetailDto> details = detailService.findAllDetail();
         model.addAttribute("details", details);
         return "admin/detail-admin";
     }
 
-    @GetMapping("/create") //Display Form buat ngisi data nya
+    @GetMapping("/detail/create") //Display Form buat ngisi data nya
     public String createDetailForm(Model model){
         Detail detail = new Detail();
         model.addAttribute("detail", detail);
         return "admin/createDetail";
     }
 
-    @GetMapping("/{detailId}/delete")
+    @GetMapping("/detail/{detailId}/delete")
     public String deleteDetail(@PathVariable("detailId")long detailId){
         detailService.delete(detailId);
-        return "redirect:/";
+        return "redirect:/detail";
     }
 
-    @PostMapping("/create") //Submit form create data
+    @PostMapping("/detail/create") //Submit form create data
     public String saveDetail(@Valid @ModelAttribute("detail") DetailDto detailDto,
                              BindingResult result, Model model){
         if (result.hasErrors()){
@@ -52,17 +52,17 @@ public class DetailController {
             return "admin/createDetail";
         }
         detailService.saveDetail(detailDto);
-        return "redirect:/";
+        return "redirect:/detail";
     }
 
-    @GetMapping("/{detailId}/edit") //Display form buat ngedit datanya
+    @GetMapping("/detail/{detailId}/edit") //Display form buat ngedit datanya
     public String editDetailForm(@PathVariable("detailId")Long detailId, Model model) {
         DetailDto detail = detailService.findDetailById(detailId);
         model.addAttribute("detail", detail);
         return "admin/editDetail";
     }
 
-    @PostMapping("/{detailId}/edit") //Submit hasil editnya
+    @PostMapping("/detail/{detailId}/edit") //Submit hasil editnya
     public String updateDetail(@PathVariable("detailId")Long detailId,
                                @Valid @ModelAttribute("detail") DetailDto detail, BindingResult result){
         if(result.hasErrors()){
@@ -70,7 +70,7 @@ public class DetailController {
         }
         detail.setId(detailId);
         detailService.updateDetail(detail);
-        return "redirect:/";
+        return "redirect:/detail";
 
     }
 

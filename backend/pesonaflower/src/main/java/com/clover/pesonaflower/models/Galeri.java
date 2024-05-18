@@ -11,16 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "detail")
+@Table(name = "galeri")
 
-public class Detail {
+public class Galeri {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nama_bunga;
-    private String foto_bunga;
-    private String detail_bunga;
-    private String deskripsi_bunga;
-    private String merawat_bunga;
-    private String harga_bunga;
+    private String nama;
+    private String foto;
 }
