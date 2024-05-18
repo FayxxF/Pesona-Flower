@@ -1,0 +1,25 @@
+
+.navbar a {
+    font-family: "Poppins", sans-serif; 
+    color: black;
+    font-size: 25px;
+    font-weight: 500;
+}
+.navbar p {
+    font-family: "Poppins", sans-serif; 
+    color: black;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.edit {
+    color: black;
+    background-color: white;
+    border: 1 #000;
+    border-radius: 5px;
+}
+
+.edit {
+    padding-left: 25px;
+    padding-right: 25px;
+}

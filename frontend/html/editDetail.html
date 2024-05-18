@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Detail</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{/css/edit.css}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg fixed-top" id="navbar" style="background-color: white;">
+    <div class="ps-5 pe-5 container-fluid">
+        <a class="navbar-brand" id="nav-brand" href="#">back</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    </div>
+</nav>
+
+<div class="container min-vh-100 d-flex justify-content-center align-items-center">
+    <form role="form" method="post" th:action="@{/detail/{detailId}/edit(detailId=${detail.id})}" th:object="${detail}">
+        <input type="hidden" th:field="*{id}">
+        <div class="mb-3">
+            <label for="harga_bunga">Harga</label>
+            <input type="text"
+                   class="form-control"
+                   id="harga_bunga"
+                   name="harga_bunga"
+                   th:field="*{harga_bunga}"
+                   placeholder="Harga Bunga">
+            <p th:if="${#fields.hasErrors('harga_bunga')}" class="text-danger" th:errors="*{harga_bunga}"></p>
+        </div>
+        <div class="mb-3">
+            <label for="nama_bunga">Nama Bunga</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="nama_bunga"
+                    name="nama_bunga"
+                    th:field="*{nama_bunga}"
+                    placeholder="Nama Bunga">
+            <p th:if="${#fields.hasErrors('nama_bunga')}" class="text-danger" th:errors="*{nama_bunga}"></p>
+
+        </div>
+        <div class="mb-3">
+            <label for="foto_bunga">Foto</label> <br>
+            <span>
+                        <i class="fa fa-cloud-upload text-light fa-5x" aria-hidden="true"></i>
+                    </span>
+            <input
+                    type="file"
+                    class="text-dark"
+                    id="foto_bunga"
+                    name="foto_bunga"
+                    th:field="*{foto_bunga}"
+                    placeholder="Upload Foto Bunga">
+<!--            <p th:if="${#fields.hasErrors('foto_bunga')}" class="text-danger" th:errors="*{foto_bunga}"></p>-->
+        </div>
+        <div class="mb-3">
+            <label for="detail_bunga">Detail</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="detail_bunga"
+                    name="detail_bunga"
+                    th:field="*{detail_bunga}"
+                    placeholder="Detail Bunga">
+            <p th:if="${#fields.hasErrors('detail_bunga')}" class="text-danger" th:errors="*{detail_bunga}"></p>
+        </div>
+        <div class="mb-3">
+            <label for="deskripsi_bunga">Deskripsi</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="deskripsi_bunga"
+                    name="deskripsi_bunga"
+                    th:field="*{deskripsi_bunga}"
+                    placeholder="Deskripsi Bunga">
+            <p th:if="${#fields.hasErrors('deskripsi_bunga')}" class="text-danger" th:errors="*{deskripsi_bunga}"></p>
+        </div>
+        <div class="mb-3">
+            <label for="merawat_bunga">Cara Merawat</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="merawat_bunga"
+                    name="merawat_bunga"
+                    th:field="*{merawat_bunga}"
+                    placeholder="Cara Merawat Bunga">
+            <p th:if="${#fields.hasErrors('merawat_bunga')}" class="text-danger" th:errors="*{merawat_bunga}"></p>
+        </div>
+        <button type="submit" class="edit">Edit</button>
+    </form>
+</div>
+</body>
+</html>
