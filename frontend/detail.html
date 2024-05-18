@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pesona's Flower</title>
+
+          <!-- Bootstrap CSS -->
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+  
+          <!-- CSS -->
+          <link rel="stylesheet" href="/CSS/detail.css">
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+			<div class="ps-5 pe-5 container-fluid">
+				<a class="navbar-brand" id="nav-brand" href="#">pesona</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex gap-2">
+						<li class="nav-item">
+							<a class="nav-link active" style="text-decoration: none;" id="nav-home" aria-current="page" href="index.html">Beranda</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" style="text-decoration: none;" id="nav-about" href="about.html">Tentang</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" style="text-decoration: none;" id="nav-gallery" href="detail.html">Galeri</a>
+						</li>
+						<li class="logoAdmin d-flex align-items-center" style="padding-bottom: 6px;">
+							<a href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                    <path d="M10.1944 10.2847C9.26567 10.2847 8.35777 10.0092 7.58563 9.49309C6.81348 8.97695 6.21179 8.24337 5.85668 7.38517C5.50157 6.52697 5.40901 5.58271 5.59071 4.67189C5.77241 3.76107 6.22021 2.92461 6.87743 2.26836C7.53466 1.61211 8.37177 1.16555 9.28286 0.985203C10.194 0.804852 11.1381 0.898809 11.9957 1.25519C12.8534 1.61156 13.5861 2.21434 14.1011 2.98725C14.6161 3.76016 14.8903 4.66847 14.8889 5.59723C14.8852 6.84051 14.3892 8.03171 13.5094 8.91019C12.6297 9.78868 11.4377 10.2829 10.1944 10.2847ZM10.1944 2.29168C9.54066 2.29168 8.90157 2.48555 8.35797 2.84877C7.81438 3.21198 7.3907 3.72824 7.14051 4.33225C6.89032 4.93626 6.82486 5.6009 6.9524 6.24212C7.07995 6.88333 7.39477 7.47232 7.85706 7.93461C8.31935 8.3969 8.90834 8.71173 9.54956 8.83927C10.1908 8.96682 10.8554 8.90136 11.4594 8.65117C12.0634 8.40098 12.5797 7.9773 12.9429 7.4337C13.3061 6.89011 13.5 6.25101 13.5 5.59723C13.5 4.72055 13.1517 3.87977 12.5318 3.25985C11.9119 2.63994 11.0711 2.29168 10.1944 2.29168Z" fill="black"/>
+                                    <path d="M11.4028 22C11.251 21.8482 11.134 21.6653 11.0596 21.4639C10.9853 21.2625 10.9555 21.0474 10.9722 20.8333H2.7778V16.8195C3.76246 15.7688 4.95677 14.9366 6.28342 14.3767C7.61008 13.8169 9.03951 13.5419 10.4792 13.5695H10.9792C10.9473 13.3366 10.9696 13.0996 11.0443 12.8767C11.1189 12.6539 11.244 12.4513 11.4098 12.2847L11.4931 12.2083C11.1667 12.2083 10.7986 12.1667 10.4792 12.1667C8.78503 12.1265 7.1031 12.4632 5.55501 13.1526C4.00692 13.842 2.63137 14.8667 1.5278 16.1528C1.43765 16.273 1.38892 16.4192 1.38892 16.5695V20.8333C1.38892 21.2017 1.53524 21.555 1.79571 21.8154C2.05618 22.0759 2.40945 22.2222 2.7778 22.2222H11.5973L11.4028 22Z" fill="black"/>
+                                    <path d="M18.6597 11.3125C18.694 11.3054 18.7295 11.3054 18.7638 11.3125C18.7294 11.3062 18.6941 11.3062 18.6597 11.3125Z" fill="black"/>
+                                    <path d="M23.389 16.1944L22.0001 15.7708C21.9008 15.4311 21.7658 15.1029 21.5973 14.7917L22.2918 13.5C22.3144 13.4483 22.3198 13.3908 22.3073 13.3358C22.2948 13.2808 22.2651 13.2313 22.2223 13.1944L21.2154 12.1875C21.1773 12.1463 21.1265 12.1191 21.071 12.1102C21.0156 12.1014 20.9588 12.1115 20.9098 12.1389L19.6321 12.8333C19.3174 12.6564 18.9844 12.5144 18.639 12.4097L18.2154 11.0208C18.1974 10.9697 18.1633 10.9258 18.1182 10.8957C18.0731 10.8657 18.0195 10.8511 17.9654 10.8542H16.5418C16.4871 10.8535 16.4337 10.8708 16.3898 10.9035C16.3459 10.9361 16.3139 10.9822 16.2987 11.0347L15.8751 12.4236C15.5273 12.5248 15.1919 12.6646 14.8751 12.8403L13.6112 12.1458C13.5633 12.119 13.5077 12.1092 13.4534 12.118C13.3992 12.1268 13.3496 12.1538 13.3126 12.1944L12.2848 13.1944C12.2467 13.2346 12.2222 13.2857 12.2147 13.3405C12.2073 13.3953 12.2172 13.4511 12.2432 13.5L12.9376 14.7639C12.7539 15.0769 12.6071 15.4101 12.5001 15.7569L11.1112 16.1736C11.0587 16.1888 11.0126 16.2208 10.98 16.2647C10.9474 16.3086 10.93 16.362 10.9307 16.4167V17.8403C10.9348 17.8904 10.9544 17.9381 10.9867 17.9766C11.019 18.0152 11.0626 18.0428 11.1112 18.0555L12.5001 18.4792C12.6028 18.8198 12.7425 19.1482 12.9168 19.4583L12.2223 20.7847C12.1958 20.8322 12.1856 20.8871 12.1931 20.941C12.2006 20.9949 12.2255 21.0449 12.264 21.0833L13.271 22.0903C13.3103 22.1295 13.361 22.1553 13.4159 22.1641C13.4707 22.1728 13.5269 22.164 13.5765 22.1389L14.8751 21.4444C15.1842 21.6107 15.5101 21.7433 15.8473 21.8403L16.264 23.2292C16.2811 23.2806 16.3136 23.3255 16.3571 23.3578C16.4006 23.3901 16.4529 23.4082 16.5071 23.4097H17.9307C17.9851 23.4092 18.0379 23.3915 18.0816 23.359C18.1253 23.3266 18.1576 23.2811 18.1737 23.2292L18.5973 21.8055C18.9301 21.7086 19.2514 21.5758 19.5557 21.4097L20.8682 22.1042C20.9164 22.1298 20.9717 22.1389 21.0257 22.1302C21.0796 22.1214 21.1292 22.0952 21.1668 22.0555L22.2223 21.1111C22.2507 21.0703 22.2659 21.0219 22.2659 20.9722C22.2659 20.9226 22.2507 20.8741 22.2223 20.8333L21.5279 19.5278C21.6965 19.2214 21.8315 18.8978 21.9307 18.5625L23.3196 18.1389C23.3721 18.1237 23.4182 18.0917 23.4508 18.0478C23.4834 18.0039 23.5008 17.9505 23.5001 17.8958V16.4375C23.5065 16.3906 23.4994 16.3429 23.4798 16.2999C23.4601 16.2568 23.4286 16.2203 23.389 16.1944ZM17.2571 19.4444C16.7977 19.4458 16.3483 19.3108 15.9658 19.0564C15.5834 18.8021 15.285 18.4399 15.1086 18.0158C14.9322 17.5917 14.8856 17.1248 14.9749 16.6742C15.0642 16.2236 15.2852 15.8097 15.61 15.4849C15.9348 15.1601 16.3488 14.9391 16.7993 14.8498C17.2499 14.7605 17.7168 14.807 18.141 14.9834C18.5651 15.1599 18.9272 15.4582 19.1816 15.8407C19.4359 16.2232 19.5709 16.6726 19.5696 17.1319C19.5677 17.7447 19.3235 18.3318 18.8902 18.7651C18.4569 19.1984 17.8698 19.4426 17.2571 19.4444Z" fill="black"/>
+                                  </svg>
+							</a>							
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+        <div class="page1 d-flex justify-content-between">
+            <div class="sideimage d-flex justify-content-start">
+                <div class="photo-gallery">
+                    <img src="/images/wAster.jpg" id="pic" style="max-width: 600px; max-height: 800px; border-radius: 15px;" alt="">
+                </div>
+            </div>
+            <div class="container d-flex">
+                <div class="text">
+                    <p>Price range: IDR.12.000-15.000</p>
+                    <h5>Mawar</h5>
+                    <div class="color">
+                        <svg class="circle" onclick="change1()" id="btn1" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 30" fill="none">
+                            <circle cx="15" cy="15" r="14" fill="white" stroke="black" stroke-width="2"/>
+                        </svg>
+                        <svg class="circle" onclick="change2()" id="btn2" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 25 25" fill="none">
+                            <circle cx="12.5" cy="12.5" r="11.5" fill="#0A4EFF" stroke="black" stroke-width="2"/>
+                        </svg>
+                        <svg class="circle" onclick="change3()" id="btn3" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 30" fill="none">
+                            <circle cx="15" cy="15" r="14" fill="#FFE600" stroke="black" stroke-width="2"/>
+                        </svg>
+                        <svg class="circle" onclick="change4()" id="btn4" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 30" fill="none">
+                            <path d="M29 15C29 22.732 22.732 29 15 29C7.26801 29 1 22.732 1 15C1 7.26801 7.26801 1 15 1C22.732 1 29 7.26801 29 15Z" fill="#9E00FF" stroke="black" stroke-width="2"/>
+                        </svg>
+                        <svg class="circle" onclick="change5()" id="btn5" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 30" fill="none">
+                            <path d="M29 15C29 22.732 22.732 29 15 29C7.26801 29 1 22.732 1 15C1 7.26801 7.26801 1 15 1C22.732 1 29 7.26801 29 15Z" fill="#FF0000" stroke="black" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <button class="btn">
+                        Lebih Lanjut
+                        <img src="/images/wa.svg" alt="">
+                    </button>
+                    <div class="details">
+                        <h4>Detail</h4>
+                        <p>100% Lorem ipsum dolor sit amet <br>
+                            Consectetur adipiscing elit. <br>
+                            Phasellus quis nibh <br>
+                            Nulla volutpat est at enim imperdiet <br>
+                            Pellentesque suscipit pharetra <br>
+                            Nam ut laoreet magna <br>
+                        </p>
+                    </div>
+                    <div class="description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ullamcorper 
+                            lacus at ligula vestibulum finibus. Phasellus sagittis bibendum ipsum in malesuada. 
+                            Vivamus elementum metus nec varius convallis.</p>
+                    </div>
+                    <div class="care">
+                        <h4>How to Care?</h4>
+                        <ol>
+                            <li>Lorem ipsum dolor sit amet</li>
+                            <li>Consectetur adipiscing elit.</li>
+                            <li>Pellentesque ullamcorper</li>
+                            <li>lacus at ligula vestibulum</li>
+                            <li>Finibus phasellus sagittis bibendum </li>
+                            <li>ipsum in malesuada.</li>
+                            <li>Vivamus elementum metus nec varius convallis</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page2 d-flex justify-content-between">
+            <div class="sideimage d-flex justify-content-start">
+                <div class="photo-gallery">
+                    <img src="/images/wKrisan.jpg" id="pic2" style="max-width: 600px; max-height: 800px; border-radius: 15px;" alt="">
+                </div>
+            </div>
+            <div class="container d-flex">
+                <div class="text">
+                    <p>Price range: IDR.12.000-15.000</p>
+                    <h5>Krisan</h5>
+                    <div class="color">
+                        <svg class="circle" onclick="kchange1()" id="2btn1" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 30" fill="none">
+                            <circle cx="15" cy="15" r="14" fill="white" stroke="black" stroke-width="2"/>
+                        </svg>
+                        <svg class="circle" onclick="kchange2()" id="2btn2" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 25 25" fill="none">
+                            <circle cx="12.5" cy="12.5" r="11.5" fill="#0A4EFF" stroke="black" stroke-width="2"/>
+                        </svg>
+                        <svg class="circle" onclick="kchange3()" id="2btn3" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 30" fill="none">
+                            <circle cx="15" cy="15" r="14" fill="#FFE600" stroke="black" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <button class="btn">
+                        Lebih Lanjut
+                        <img src="/images/wa.svg" alt="">
+                    </button>
+                    <div class="details">
+                        <h4>Detail</h4>
+                        <p>100% Lorem ipsum dolor sit amet <br>
+                            Consectetur adipiscing elit. <br>
+                            Phasellus quis nibh <br>
+                            Nulla volutpat est at enim imperdiet <br>
+                            Pellentesque suscipit pharetra <br>
+                            Nam ut laoreet magna <br>
+                        </p>
+                    </div>
+                    <div class="description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ullamcorper 
+                            lacus at ligula vestibulum finibus. Phasellus sagittis bibendum ipsum in malesuada. 
+                            Vivamus elementum metus nec varius convallis.</p>
+                    </div>
+                    <div class="care">
+                        <h4>How to Care?</h4>
+                        <ol>
+                            <li>Lorem ipsum dolor sit amet</li>
+                            <li>Consectetur adipiscing elit.</li>
+                            <li>Pellentesque ullamcorper</li>
+                            <li>lacus at ligula vestibulum</li>
+                            <li>Finibus phasellus sagittis bibendum </li>
+                            <li>ipsum in malesuada.</li>
+                            <li>Vivamus elementum metus nec varius convallis</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="main.js"></script>
+    </body>
+</html>
