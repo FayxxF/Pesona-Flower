@@ -13,7 +13,7 @@
 <div class="wrapper">
     <div class="container main">
         <div class="row d-flex justify-content-center">
-            <form class="col-md-6 right" role="form" method="post" th:action="@{/create}" th:object="${galeri}">
+            <form class="col-md-6 right" role="form" method="post" th:action="@{/home/create}" th:object="${galeri}">
                 <div class="input-box">
                     <header style="font-size: 30px; margin-bottom: 20px;">Create Bunga Unggulan</header>
                     <div class="input-field">
@@ -34,6 +34,7 @@
                         </span>
                         <input
                             type="file"
+                            accept="image/*"
                             class="text-dark"
                             id="foto"
                             name="foto"

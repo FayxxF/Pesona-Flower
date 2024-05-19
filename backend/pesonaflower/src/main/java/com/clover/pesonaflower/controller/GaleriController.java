@@ -25,6 +25,13 @@ public class GaleriController {
     }
 
     @GetMapping("/")
+    public String listGaleri(Model model){
+        List<GaleriDto> galeris = galeriService.findAllGaleri();
+        model.addAttribute("galeris", galeris);
+        return "admin/home";
+    }
+
+    @GetMapping("/home")
     public String listGaleris(Model model){
         List<GaleriDto> galeris = galeriService.findAllGaleri();
         model.addAttribute("galeris", galeris);
@@ -32,14 +39,14 @@ public class GaleriController {
     }
 
 
-    @GetMapping("/create")
+    @GetMapping("/home/create")
     public String createGaleriForm(Model model){
         Galeri galeri = new Galeri();
         model.addAttribute("galeri", galeri);
         return "admin/createGaleri";
     }
 
-    @PostMapping("/create")
+    @PostMapping("/home/create")
     public String saveGaleri(@Valid @ModelAttribute("galeri") GaleriDto galeriDto,
                              BindingResult result, Model model){
         if (result.hasErrors()){
@@ -47,18 +54,18 @@ public class GaleriController {
             return "admin/createGaleri";
         }
         galeriService.saveGaleri(galeriDto);
-        return "redirect:/";
+        return "redirect:/home";
 
     }
 
-    @GetMapping("/{galeriId}/edit")
+    @GetMapping("/home/{galeriId}/edit")
     public String editGaleriForm(@PathVariable("galeriId")Long galeriId, Model model){
         GaleriDto galeri = galeriService.findGaleriById(galeriId);
         model.addAttribute("galeri", galeri);
         return "admin/editGaleri";
     }
 
-    @PostMapping("/{galeriId}/edit")
+    @PostMapping("/home/{galeriId}/edit")
     public String updateGaleri(@PathVariable("galeriId")Long galeriId,
                                @Valid @ModelAttribute("galeri") GaleriDto galeri, BindingResult result){
         if(result.hasErrors()){
@@ -66,12 +73,12 @@ public class GaleriController {
         }
         galeri.setId(galeriId);
         galeriService.updateGaleri(galeri);
-        return "redirect:/";
+        return "redirect:/home";
     }
 
-    @GetMapping("/{galeriId}/delete")
+    @GetMapping("/home/{galeriId}/delete")
     public String deleteGaleri(@PathVariable("galeriId")long galeriId){
         galeriService.delete(galeriId);
-        return "redirect:/";
+        return "redirect:/home";
     }
 }
