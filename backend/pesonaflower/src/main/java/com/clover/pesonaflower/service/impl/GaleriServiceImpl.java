@@ -34,21 +34,33 @@ public class GaleriServiceImpl implements GaleriService {
 
     @Override
     public Galeri saveGaleri(GaleriDto galeriDto) {
-        return null;
+        Galeri galeri = mapToGaleri(galeriDto);
+        return galeriRepository.save(galeri);
+    }
+
+    private Galeri mapToGaleri(GaleriDto galeri) {
+        Galeri galeriDto = Galeri.builder()
+                .id(galeri.getId())
+                .foto(galeri.getFoto())
+                .nama(galeri.getNama())
+                .build();
+        return galeriDto;
     }
 
     @Override
     public GaleriDto findGaleriById(Long galeriId) {
-        return null;
+        Galeri galeri = galeriRepository.findById(galeriId).get();
+        return mapToGalerisDto(galeri);
     }
 
     @Override
-    public void updateGaleri(GaleriDto galeri) {
-
+    public void updateGaleri(GaleriDto galeriDto) {
+        Galeri galeri = mapToGaleri(galeriDto);
+        galeriRepository.save(galeri);
     }
 
     @Override
     public void delete(long galeriId) {
-
+        galeriRepository.deleteById(galeriId);
     }
 }

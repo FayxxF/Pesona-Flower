@@ -28,7 +28,7 @@ public class DetailController {
     public String listDetails(Model model){
         List<DetailDto> details = detailService.findAllDetail();
         model.addAttribute("details", details);
-        return "admin/detail-admin";
+        return "admin/detail";
     }
 
     @GetMapping("/detail/create") //Display Form buat ngisi data nya

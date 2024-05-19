@@ -34,21 +34,34 @@ public class FaqServiceImpl implements FaqService {
 
     @Override
     public Faq saveFaq(FaqDto faqDto) {
-        return null;
+        Faq faq = mapToFaq(faqDto);
+        return faqRepository.save(faq);
+    }
+
+    private Faq mapToFaq(FaqDto faq) {
+        Faq faqDto = Faq.builder()
+                .id(faq.getId())
+                .question(faq.getQuestion())
+                .answer(faq.getAnswer())
+                .build();
+        return faqDto;
     }
 
     @Override
     public FaqDto findFaqById(Long faqId) {
-        return null;
+        Faq faq = faqRepository.findById(faqId).get();
+        return mapTofaqsDto(faq);
     }
 
     @Override
-    public void updateFaq(FaqDto faq) {
+    public void updateFaq(FaqDto faqDto) {
+        Faq faq =  mapToFaq(faqDto);
+        faqRepository.save(faq);
 
     }
 
     @Override
     public void delete(long faqId) {
-
+        faqRepository.deleteById(faqId);
     }
 }

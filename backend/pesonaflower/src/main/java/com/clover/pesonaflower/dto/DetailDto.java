@@ -20,8 +20,6 @@ public class DetailDto {
     private String detail_bunga;
     @NotEmpty(message = "Deskripsi Bunga tidak boleh kosong")
     private String deskripsi_bunga;
-    @NotEmpty(message = "Cara Merawat Bunga tidak boleh kosong")
-    private String merawat_bunga;
     @NotEmpty(message = "Harga Bunga tidak boleh kosong")
     private String harga_bunga;
 }

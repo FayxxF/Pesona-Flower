@@ -13,32 +13,33 @@
 <div class="wrapper">
     <div class="container main">
         <div class="row d-flex justify-content-center">
-            <form class="col-md-6 right" role="form" method="post" th:action="@{/detail/{detailId}/edit(detailId=${detail.id})}" 
-            th:object="${detail}">
+            <form class="col-md-6 right" role="form" method="post" th:action="@{/{galeriId}/edit(galeriId=${galeri.id})}" 
+            th:object="${galeri}">
                 <div class="input-box">
-                    <header style="font-size: 30px; margin-bottom: 20px;">Edit FAQ</header>
+                    <header style="font-size: 30px; margin-bottom: 20px;">Edit Bunga Unggulan</header>
                     <div class="input-field">
-                        <label for="question">Pertanyaan</label>
+                        <label for="nama">Nama Bunga</label>
                         <input 
                             type="text"
                             class="form-control"
-                            id="question"
-                            name="question"
-                            th:field="*{question}"
-                            placeholder="Ketik pertanyaan..">
-                        <p th:if="${#fields.hasErrors('question')}" class="text-danger" th:errors="*{question}"></p>
+                            id="nama"
+                            name="nama"
+                            th:field="*{nama}"
+                            placeholder="Ketik nama bunga..">
+                        <p th:if="${#fields.hasErrors('nama')}" class="text-danger" th:errors="*{nama}"></p>
                     </div> 
-                    
-                    <div class="input-field">
-                        <label for="answer">Jawaban</label>
-                        <textarea
-                            class="form-control"
-                            id="answer"
-                            name="answer"
-                            th:field="*{answer}"
-                            placeholder="Ketik jawaban.."
-                            oninput="adjustTextareaHeight(this)"></textarea>
-                        <p th:if="${#fields.hasErrors('answer')}" class="text-danger" th:errors="*{answer}"></p>
+                    <div class="input-field" style="padding-bottom: 20px;">
+                        <label for="foto">Foto</label> 
+                        <span>
+                            <i class="fa fa-cloud-upload text-light fa-5x" aria-hidden="true"></i>
+                        </span>
+                        <input
+                            type="file"
+                            class="text-dark"
+                            id="foto"
+                            name="foto"
+                            th:field="*{foto}"
+                            placeholder="Upload Foto Bunga">
                     </div> 
                     <div class="input-field">
                         <input type="submit" class="submit" value="Edit">

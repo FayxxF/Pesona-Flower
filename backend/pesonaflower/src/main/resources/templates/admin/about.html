@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesona's Flower</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/about.css">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+    <div class="ps-5 pe-5 container-fluid">
+        <a class="navbar-brand" id="nav-brand" href="#">pesona</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex gap-2">
+                <li class="nav-item">
+                    <a class="nav-link active" style="text-decoration: none;" id="nav-home" aria-current="page" href="index-admin.html">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="text-decoration: none;" id="nav-about" href="about.html">Tentang</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="text-decoration: none;" id="nav-gallery" href="detail.html">Galeri</a>
+                </li>
+                <li class="logoAdmin d-flex align-items-center" style="padding-bottom: 6px;">
+                    <a href="login.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                            <path d="M10.1944 10.2847C9.26567 10.2847 8.35777 10.0092 7.58563 9.49309C6.81348 8.97695 6.21179 8.24337 5.85668 7.38517C5.50157 6.52697 5.40901 5.58271 5.59071 4.67189C5.77241 3.76107 6.22021 2.92461 6.87743 2.26836C7.53466 1.61211 8.37177 1.16555 9.28286 0.985203C10.194 0.804852 11.1381 0.898809 11.9957 1.25519C12.8534 1.61156 13.5861 2.21434 14.1011 2.98725C14.6161 3.76016 14.8903 4.66847 14.8889 5.59723C14.8852 6.84051 14.3892 8.03171 13.5094 8.91019C12.6297 9.78868 11.4377 10.2829 10.1944 10.2847ZM10.1944 2.29168C9.54066 2.29168 8.90157 2.48555 8.35797 2.84877C7.81438 3.21198 7.3907 3.72824 7.14051 4.33225C6.89032 4.93626 6.82486 5.6009 6.9524 6.24212C7.07995 6.88333 7.39477 7.47232 7.85706 7.93461C8.31935 8.3969 8.90834 8.71173 9.54956 8.83927C10.1908 8.96682 10.8554 8.90136 11.4594 8.65117C12.0634 8.40098 12.5797 7.9773 12.9429 7.4337C13.3061 6.89011 13.5 6.25101 13.5 5.59723C13.5 4.72055 13.1517 3.87977 12.5318 3.25985C11.9119 2.63994 11.0711 2.29168 10.1944 2.29168Z" fill="black"/>
+                            <path d="M11.4028 22C11.251 21.8482 11.134 21.6653 11.0596 21.4639C10.9853 21.2625 10.9555 21.0474 10.9722 20.8333H2.7778V16.8195C3.76246 15.7688 4.95677 14.9366 6.28342 14.3767C7.61008 13.8169 9.03951 13.5419 10.4792 13.5695H10.9792C10.9473 13.3366 10.9696 13.0996 11.0443 12.8767C11.1189 12.6539 11.244 12.4513 11.4098 12.2847L11.4931 12.2083C11.1667 12.2083 10.7986 12.1667 10.4792 12.1667C8.78503 12.1265 7.1031 12.4632 5.55501 13.1526C4.00692 13.842 2.63137 14.8667 1.5278 16.1528C1.43765 16.273 1.38892 16.4192 1.38892 16.5695V20.8333C1.38892 21.2017 1.53524 21.555 1.79571 21.8154C2.05618 22.0759 2.40945 22.2222 2.7778 22.2222H11.5973L11.4028 22Z" fill="black"/>
+                            <path d="M18.6597 11.3125C18.694 11.3054 18.7295 11.3054 18.7638 11.3125C18.7294 11.3062 18.6941 11.3062 18.6597 11.3125Z" fill="black"/>
+                            <path d="M23.389 16.1944L22.0001 15.7708C21.9008 15.4311 21.7658 15.1029 21.5973 14.7917L22.2918 13.5C22.3144 13.4483 22.3198 13.3908 22.3073 13.3358C22.2948 13.2808 22.2651 13.2313 22.2223 13.1944L21.2154 12.1875C21.1773 12.1463 21.1265 12.1191 21.071 12.1102C21.0156 12.1014 20.9588 12.1115 20.9098 12.1389L19.6321 12.8333C19.3174 12.6564 18.9844 12.5144 18.639 12.4097L18.2154 11.0208C18.1974 10.9697 18.1633 10.9258 18.1182 10.8957C18.0731 10.8657 18.0195 10.8511 17.9654 10.8542H16.5418C16.4871 10.8535 16.4337 10.8708 16.3898 10.9035C16.3459 10.9361 16.3139 10.9822 16.2987 11.0347L15.8751 12.4236C15.5273 12.5248 15.1919 12.6646 14.8751 12.8403L13.6112 12.1458C13.5633 12.119 13.5077 12.1092 13.4534 12.118C13.3992 12.1268 13.3496 12.1538 13.3126 12.1944L12.2848 13.1944C12.2467 13.2346 12.2222 13.2857 12.2147 13.3405C12.2073 13.3953 12.2172 13.4511 12.2432 13.5L12.9376 14.7639C12.7539 15.0769 12.6071 15.4101 12.5001 15.7569L11.1112 16.1736C11.0587 16.1888 11.0126 16.2208 10.98 16.2647C10.9474 16.3086 10.93 16.362 10.9307 16.4167V17.8403C10.9348 17.8904 10.9544 17.9381 10.9867 17.9766C11.019 18.0152 11.0626 18.0428 11.1112 18.0555L12.5001 18.4792C12.6028 18.8198 12.7425 19.1482 12.9168 19.4583L12.2223 20.7847C12.1958 20.8322 12.1856 20.8871 12.1931 20.941C12.2006 20.9949 12.2255 21.0449 12.264 21.0833L13.271 22.0903C13.3103 22.1295 13.361 22.1553 13.4159 22.1641C13.4707 22.1728 13.5269 22.164 13.5765 22.1389L14.8751 21.4444C15.1842 21.6107 15.5101 21.7433 15.8473 21.8403L16.264 23.2292C16.2811 23.2806 16.3136 23.3255 16.3571 23.3578C16.4006 23.3901 16.4529 23.4082 16.5071 23.4097H17.9307C17.9851 23.4092 18.0379 23.3915 18.0816 23.359C18.1253 23.3266 18.1576 23.2811 18.1737 23.2292L18.5973 21.8055C18.9301 21.7086 19.2514 21.5758 19.5557 21.4097L20.8682 22.1042C20.9164 22.1298 20.9717 22.1389 21.0257 22.1302C21.0796 22.1214 21.1292 22.0952 21.1668 22.0555L22.2223 21.1111C22.2507 21.0703 22.2659 21.0219 22.2659 20.9722C22.2659 20.9226 22.2507 20.8741 22.2223 20.8333L21.5279 19.5278C21.6965 19.2214 21.8315 18.8978 21.9307 18.5625L23.3196 18.1389C23.3721 18.1237 23.4182 18.0917 23.4508 18.0478C23.4834 18.0039 23.5008 17.9505 23.5001 17.8958V16.4375C23.5065 16.3906 23.4994 16.3429 23.4798 16.2999C23.4601 16.2568 23.4286 16.2203 23.389 16.1944ZM17.2571 19.4444C16.7977 19.4458 16.3483 19.3108 15.9658 19.0564C15.5834 18.8021 15.285 18.4399 15.1086 18.0158C14.9322 17.5917 14.8856 17.1248 14.9749 16.6742C15.0642 16.2236 15.2852 15.8097 15.61 15.4849C15.9348 15.1601 16.3488 14.9391 16.7993 14.8498C17.2499 14.7605 17.7168 14.807 18.141 14.9834C18.5651 15.1599 18.9272 15.4582 19.1816 15.8407C19.4359 16.2232 19.5709 16.6726 19.5696 17.1319C19.5677 17.7447 19.3235 18.3318 18.8902 18.7651C18.4569 19.1984 17.8698 19.4426 17.2571 19.4444Z" fill="black"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="page1" style="background-color: white;">
+    <div class="text-left">
+        <h5>We grow our own flowers</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </div>
+    <div class="basket d-flex justify-content-end">
+        <img src="/images/flowerbasket.svg" alt="">
+    </div>
+    <div class="text-bleft">
+        <p>Lorem ipsum</p>
+    </div>
+    <div class="text-bright">
+        <p>lorem lorem</p>
+    </div>
+</div>
+
+
+<div class="page2 d-flex justify-content-between" style="background-color: white;">
+    <div class="d-flex">
+        <div class="text-here">
+            <h5>Many beauty bouquet</h5>
+            <h5>that we made for you</h5>
+            <p>Lorem ipsum jlajfajs</p>
+        </div>
+    </div>
+    <div class="container d-flex justify-content-end">
+        <div class="photo-gallery">
+            <div class="column">
+                <div class="photo">
+                    <img src="/images/2.svg" alt="">
+                </div>
+                <div class="photo">
+                    <img src="/images/4.svg" alt="">
+                </div>
+            </div>
+            <div class="column">
+                <div class="photo">
+                    <img src="/images/1.svg" alt="">
+                </div>
+                <div class="photo">
+                    <img src="/images/3.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page3" style="background-color: white;">
+    <div class="text-top text-center">
+        <div class="d-flex justify-content-center align-items-center">
+            <h5 class="mb-0">Frequently Asked Questions</h5>
+            <a th:href="@{/about/create}" class="ml-2 pl-3" style="padding-left: 10px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path d="M21.6666 22.5H23.3333V17.5H28.3333V15.8333H23.3333V10.8333H21.6666V15.8333H16.6666V17.5H21.6666V22.5ZM13.5266 28.3333C12.7588 28.3333 12.1183 28.0767 11.6049 27.5633C11.0916 27.05 10.8344 26.4094 10.8333 25.6417V7.69167C10.8333 6.925 11.0905 6.28445 11.6049 5.77C12.1194 5.25556 12.7599 4.99889 13.5266 5H31.4749C32.2416 5 32.8821 5.25667 33.3966 5.77C33.911 6.28334 34.1677 6.92389 34.1666 7.69167V25.6417C34.1666 26.4083 33.9099 27.0483 33.3966 27.5617C32.8833 28.075 32.2421 28.3322 31.4733 28.3333H13.5266ZM13.5266 26.6667H31.4749C31.7305 26.6667 31.9655 26.56 32.1799 26.3467C32.3944 26.1333 32.501 25.8983 32.4999 25.6417V7.69167C32.4999 7.43611 32.3933 7.20111 32.1799 6.98667C31.9666 6.77223 31.731 6.66556 31.4733 6.66667H13.5266C13.2699 6.66667 13.0344 6.77334 12.8199 6.98667C12.6055 7.2 12.4988 7.435 12.4999 7.69167V25.6417C12.4999 25.8972 12.6066 26.1322 12.8199 26.3467C13.0333 26.5611 13.2683 26.6678 13.5249 26.6667M8.52492 33.3333C7.75826 33.3333 7.1177 33.0767 6.60326 32.5633C6.08881 32.05 5.83214 31.4094 5.83326 30.6417V11.025H7.49992V30.6417C7.49992 30.8972 7.60659 31.1322 7.81992 31.3467C8.03326 31.5611 8.26826 31.6678 8.52492 31.6667H28.1416V33.3333H8.52492Z" fill="#1E1E1E"/>
+                </svg>
+            </a>
+        </div>
+        <p>Easy! You shop locally and give meaningfully, all online.</p>
+    </div>
+    <div class="faq" th:each="faq: ${faqs}">
+        <div class="question">
+            <h3 style="margin: 0;" th:text="${faq.question}">Questions</h3>
+            <div class="crud me-auto d-flex align-items-center">
+                <a th:href="@{/about/{faqId}/edit(faqId = ${faq.id})}">
+                    <svg style="padding-left: 10px;" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M11.6667 11.6667H10.0001C9.11603 11.6667 8.26818 12.0178 7.64306 12.643C7.01794 13.2681 6.66675 14.1159 6.66675 15V30C6.66675 30.884 7.01794 31.7319 7.64306 32.357C8.26818 32.9821 9.11603 33.3333 10.0001 33.3333H25.0001C25.8841 33.3333 26.732 32.9821 27.3571 32.357C27.9822 31.7319 28.3334 30.884 28.3334 30V28.3333" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M26.6667 8.33333L31.6667 13.3333M33.975 10.975C34.6314 10.3186 35.0002 9.4283 35.0002 8.5C35.0002 7.57169 34.6314 6.68141 33.975 6.025C33.3186 5.36858 32.4283 4.99982 31.5 4.99982C30.5717 4.99982 29.6814 5.36858 29.025 6.025L15 20V25H20L33.975 10.975Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a th:href="@{/about/{faqId}/delete(faqId = ${faq.id})}" onclick="return confirm('Anda yakin ingin menghapus?')" class="delete">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                        <path d="M20 11.25V23.75H10V11.25H20ZM18.125 3.75H11.875L10.625 5H6.25V7.5H23.75V5H19.375L18.125 3.75ZM22.5 8.75H7.5V23.75C7.5 25.125 8.625 26.25 10 26.25H20C21.375 26.25 22.5 25.125 22.5 23.75V8.75Z" fill="#1E1E1E"/>
+                    </svg>
+                </a>
+            </div>
+            <svg class="arrow" width="15" height="10" viewBox="0 0 42 25">
+                <path d="M3 3L21 21L39 3" stroke="black" store-width="7" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <div class="answer">
+            <p  th:text="${faq.answer}">
+                Answer
+            </p>
+        </div>
+    </div>
+
+    <footer class="foot d-flex justify-content-between">
+        <div class="f1 d-flex justify-content-start">
+            <img src="/images/flowerfooter1.svg" alt="">
+        </div>
+        <div class="f2">
+            <img src="/images/flowerfooter2.svg" alt="">
+        </div>
+    </footer>
+</div>
+<script src="/js/main.js"></script>
+</body>
+</html>

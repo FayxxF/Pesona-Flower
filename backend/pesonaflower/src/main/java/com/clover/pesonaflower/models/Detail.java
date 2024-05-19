@@ -21,6 +21,5 @@ public class Detail {
     private String foto_bunga;
     private String detail_bunga;
     private String deskripsi_bunga;
-    private String merawat_bunga;
     private String harga_bunga;
 }

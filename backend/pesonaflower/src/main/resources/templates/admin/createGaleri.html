@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Edit - Pesona's Flower</title>
+    <title>Create - Pesona's Flower</title>
     
     <link rel="stylesheet" th:href="@{/css/editDetail.css}">
 </head>
@@ -13,36 +13,35 @@
 <div class="wrapper">
     <div class="container main">
         <div class="row d-flex justify-content-center">
-            <form class="col-md-6 right" role="form" method="post" th:action="@{/detail/{detailId}/edit(detailId=${detail.id})}" 
-            th:object="${detail}">
+            <form class="col-md-6 right" role="form" method="post" th:action="@{/create}" th:object="${galeri}">
                 <div class="input-box">
-                    <header style="font-size: 30px; margin-bottom: 20px;">Edit Bunga Unggulan</header>
+                    <header style="font-size: 30px; margin-bottom: 20px;">Create Bunga Unggulan</header>
                     <div class="input-field">
-                        <label for="nama_bunga">Nama Bunga</label>
+                        <label for="nama">Nama Bunga</label>
                         <input 
                             type="text"
                             class="form-control"
-                            id="nama_bunga"
-                            name="nama_bunga"
-                            th:field="*{nama_bunga}"
+                            id="nama"
+                            name="nama"
+                            th:field="*{nama}"
                             placeholder="Ketik nama bunga..">
-                        <p th:if="${#fields.hasErrors('nama_bunga')}" class="text-danger" th:errors="*{nama_bunga}"></p>
+                        <p th:if="${#fields.hasErrors('nama')}" class="text-danger" th:errors="*{nama}"></p>
                     </div> 
                     <div class="input-field" style="padding-bottom: 20px;">
-                        <label for="foto_bunga">Foto</label> 
+                        <label for="foto">Foto</label> 
                         <span>
                             <i class="fa fa-cloud-upload text-light fa-5x" aria-hidden="true"></i>
                         </span>
                         <input
                             type="file"
                             class="text-dark"
-                            id="foto_bunga"
-                            name="foto_bunga"
-                            th:field="*{foto_bunga}"
+                            id="foto"
+                            name="foto"
+                            th:field="*{foto}"
                             placeholder="Upload Foto Bunga">
                     </div> 
                     <div class="input-field">
-                        <input type="submit" class="submit" value="Edit">
+                        <input type="submit" class="submit" value="Create">
                     </div> 
                 </div>  
             </form>
@@ -57,7 +56,7 @@ function adjustTextareaHeight(textarea) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    var textareas = document.querySelectorAll('textarea');
+    let textareas = document.querySelectorAll('textarea');
     textareas.forEach(function(textarea) {
         adjustTextareaHeight(textarea);
     });

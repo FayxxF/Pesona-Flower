@@ -54,7 +54,6 @@ public class DetailServiceImpl implements DetailService {
                 .foto_bunga(detail.getFoto_bunga())
                 .detail_bunga(detail.getDetail_bunga())
                 .deskripsi_bunga(detail.getDeskripsi_bunga())
-                .merawat_bunga(detail.getMerawat_bunga())
                 .harga_bunga(detail.getHarga_bunga())
                 .build();
         return detailDto;
@@ -67,7 +66,6 @@ public class DetailServiceImpl implements DetailService {
                 .foto_bunga(detail.getFoto_bunga())
                 .detail_bunga(detail.getDetail_bunga())
                 .deskripsi_bunga(detail.getDeskripsi_bunga())
-                .merawat_bunga(detail.getMerawat_bunga())
                 .harga_bunga(detail.getHarga_bunga())
                 .build();
         return detailDto;

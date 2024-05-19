@@ -1,22 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
     --pink-color: #974B66;
-    --black-color: #000;
-    --white-color: #fff;
     --gray-color: #F6F5F2;
 }
 
 
+.nav-link {
+    position: relative;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.nav-link::after {
+    content: '';
+    opacity: 0;
+    transition: all 0.2s;
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
 
-
-
-
+.nav-link:hover::after {
+    opacity: 1;
+}
 
 .navbar.scrolled {
     background-color: white;
     color: #000 !important;
-    
+    text-decoration: none;
+}
+
+.adminLogo.scrolled {
+    fill: #000 !important;
+    transition: 0.5s;
+}
+
+.outline-black {
+    border: 2px solid black;
+    padding: 4px 4px;
+    border-radius: 5px;
+    color: black;
+}
+
+.outline-black:hover {
+    background-color: black;
+    color: white;
 }
 
 .navbar {
@@ -107,6 +137,15 @@
     flex-wrap: nowrap; /* Prevent wrapping to a new line */
 }
 
+.card h3 {
+    font-family: "Poppins", sans-serif
+    
+}
+.btn {
+    font-family: "Poppins", sans-serif
+
+}
+
 .bouquet {
     background-color: var(--gray-color);
 }
@@ -115,11 +154,70 @@
     background-color: #fff;
     height: 75vh;
 }
+
 .pag3 {
     overflow: hidden;
     margin-top: 25vh;
 }
+.pag3 h5{
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+}
+.pag3 p{
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+}
+
+
+
+.footer a {
+    font-family: "Poppins", sans-serif;
+}
+.footer p {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+}
 
 .footer h5 {
+    font-family: "Poppins", sans-serif;
     text-size-adjust: 100px;
+    font-size: 20px;
+    
+}
+
+.d-flex.align-items-center {
+    display: flex;
+    align-items: center;
+}
+.logo {
+    width: 25px; /* Ubah ukuran sesuai kebutuhan */
+    height: auto;
+    margin-right: 5px; /* Sesuaikan jarak antara logo dan teks */
+}
+.text-pesona {
+    font-size: 1.25rem; /* Sesuaikan ukuran font */
+    margin: 5px; /* Hapus margin bawaan */
+}
+
+.icon-row {
+    display: flex;
+    gap: 10px; /* Sesuaikan jarak antar ikon */
+}
+.svg-container {
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+.svg-container .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.svg-container .icon {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
