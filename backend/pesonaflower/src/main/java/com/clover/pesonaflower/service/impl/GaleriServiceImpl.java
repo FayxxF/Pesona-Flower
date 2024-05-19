@@ -2,7 +2,10 @@ package com.clover.pesonaflower.service.impl;
 
 import com.clover.pesonaflower.dto.GaleriDto;
 import com.clover.pesonaflower.models.Galeri;
+import com.clover.pesonaflower.models.UserEntity;
 import com.clover.pesonaflower.repository.GaleriRepository;
+import com.clover.pesonaflower.repository.UserRepository;
+import com.clover.pesonaflower.security.SecurityUtil;
 import com.clover.pesonaflower.service.GaleriService;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +15,11 @@ import java.util.stream.Collectors;
 @Service
 public class GaleriServiceImpl implements GaleriService {
     private GaleriRepository galeriRepository;
+    private UserRepository userRepository;
 
-    public GaleriServiceImpl(GaleriRepository galeriRepository) {
+    public GaleriServiceImpl(GaleriRepository galeriRepository, UserRepository userRepository) {
         this.galeriRepository = galeriRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -28,13 +33,17 @@ public class GaleriServiceImpl implements GaleriService {
                 .id(galeri.getId())
                 .foto(galeri.getFoto())
                 .nama(galeri.getNama())
+                .createdBy(galeri.getCreatedBy())
                 .build();
         return galeriDto;
     }
 
     @Override
     public Galeri saveGaleri(GaleriDto galeriDto) {
+        String username = SecurityUtil.getSessionUser();
+        UserEntity user = userRepository.findByUsername(username);
         Galeri galeri = mapToGaleri(galeriDto);
+        galeri.setCreatedBy(user);
         return galeriRepository.save(galeri);
     }
 
@@ -43,6 +52,7 @@ public class GaleriServiceImpl implements GaleriService {
                 .id(galeri.getId())
                 .foto(galeri.getFoto())
                 .nama(galeri.getNama())
+                .createdBy(galeri.getCreatedBy())
                 .build();
         return galeriDto;
     }
@@ -55,7 +65,10 @@ public class GaleriServiceImpl implements GaleriService {
 
     @Override
     public void updateGaleri(GaleriDto galeriDto) {
+        String username = SecurityUtil.getSessionUser();
+        UserEntity user = userRepository.findByUsername(username);
         Galeri galeri = mapToGaleri(galeriDto);
+        galeri.setCreatedBy(user);
         galeriRepository.save(galeri);
     }
 

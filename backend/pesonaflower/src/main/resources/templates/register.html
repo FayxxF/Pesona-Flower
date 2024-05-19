@@ -24,10 +24,10 @@
             <div class="col-md-6 right">
                 
                 <div class="input-box">
-                    <header>Admin login</header>
+                    <header>Admin Register</header>
                     <div th:if="${param.error}" class="alert alert-success">Username atau Password invalid</div>
                     <div th:if="${param.logout}" class="alert alert-success">Anda telah berhasil logout!</div>
-                    <form method="post" role="form" th:action="@{/login}">
+                    <form method="post" role="form" th:action="@{/register/save}" th:object="${user}">
                         <div class="form-field">
                            <label>Username</label>
                             <input
@@ -48,7 +48,7 @@
                                    required=""
                                    name="password">
                         </div>
-                        <button type="submit" value="Log in" class="btn btn-secondary">Login</button>
+                        <button type="submit" value="Log in" class="btn btn-secondary">Register</button>
                     </form>
                 </div>
             </div>

@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,4 +21,9 @@ public class Galeri {
     private Long id;
     private String nama;
     private String foto;
+    private Date createAt;
+
+    @ManyToOne
+    @JoinColumn(name="created_by", nullable = false)
+    private UserEntity createdBy;
 }

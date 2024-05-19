@@ -2,7 +2,10 @@ package com.clover.pesonaflower.service.impl;
 
 import com.clover.pesonaflower.dto.DetailDto;
 import com.clover.pesonaflower.models.Detail;
+import com.clover.pesonaflower.models.UserEntity;
 import com.clover.pesonaflower.repository.DetailRepository;
+import com.clover.pesonaflower.repository.UserRepository;
+import com.clover.pesonaflower.security.SecurityUtil;
 import com.clover.pesonaflower.service.DetailService;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +16,11 @@ import java.util.stream.Collectors;
 @Service
 public class DetailServiceImpl implements DetailService {
     private DetailRepository detailRepository;
+    private UserRepository userRepository;
 
-    public DetailServiceImpl(DetailRepository detailRepository) {
+    public DetailServiceImpl(DetailRepository detailRepository, UserRepository userRepository) {
         this.detailRepository = detailRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -26,7 +31,10 @@ public class DetailServiceImpl implements DetailService {
 
     @Override
     public Detail saveDetail(DetailDto detailDto) { //saving detail yg ditambahin
+        String username = SecurityUtil.getSessionUser();
+        UserEntity user = userRepository.findByUsername(username);
         Detail detail = mapToDetail(detailDto);
+        detail.setCreatedBy(user);
         return detailRepository.save(detail);
     }
 
@@ -38,7 +46,10 @@ public class DetailServiceImpl implements DetailService {
 
     @Override
     public void updateDetail(DetailDto detailDto) { //updating, instansiasi maptodetail
+        String username = SecurityUtil.getSessionUser();
+        UserEntity user = userRepository.findByUsername(username);
         Detail detail = mapToDetail(detailDto);
+        detail.setCreatedBy(user);
         detailRepository.save(detail);
     }
 
@@ -55,6 +66,7 @@ public class DetailServiceImpl implements DetailService {
                 .detail_bunga(detail.getDetail_bunga())
                 .deskripsi_bunga(detail.getDeskripsi_bunga())
                 .harga_bunga(detail.getHarga_bunga())
+                .createdBy(detail.getCreatedBy())
                 .build();
         return detailDto;
     }
@@ -67,6 +79,7 @@ public class DetailServiceImpl implements DetailService {
                 .detail_bunga(detail.getDetail_bunga())
                 .deskripsi_bunga(detail.getDeskripsi_bunga())
                 .harga_bunga(detail.getHarga_bunga())
+                .createdBy(detail.getCreatedBy())
                 .build();
         return detailDto;
 

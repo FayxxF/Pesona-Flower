@@ -1,8 +1,12 @@
 package com.clover.pesonaflower.service.impl;
 
 import com.clover.pesonaflower.dto.FaqDto;
+import com.clover.pesonaflower.models.Detail;
 import com.clover.pesonaflower.models.Faq;
+import com.clover.pesonaflower.models.UserEntity;
 import com.clover.pesonaflower.repository.FaqRepository;
+import com.clover.pesonaflower.repository.UserRepository;
+import com.clover.pesonaflower.security.SecurityUtil;
 import com.clover.pesonaflower.service.FaqService;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +16,11 @@ import java.util.stream.Collectors;
 @Service
 public class FaqServiceImpl implements FaqService {
     private FaqRepository faqRepository;
+    private UserRepository userRepository;
 
-    public FaqServiceImpl(FaqRepository faqRepository) {
+    public FaqServiceImpl(FaqRepository faqRepository, UserRepository userRepository) {
         this.faqRepository = faqRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -28,13 +34,17 @@ public class FaqServiceImpl implements FaqService {
                 .id(faq.getId())
                 .question(faq.getQuestion())
                 .answer(faq.getAnswer())
+                .createdBy(faq.getCreatedBy())
                 .build();
         return faqDto;
     }
 
     @Override
     public Faq saveFaq(FaqDto faqDto) {
+        String username = SecurityUtil.getSessionUser();
+        UserEntity user = userRepository.findByUsername(username);
         Faq faq = mapToFaq(faqDto);
+        faq.setCreatedBy(user);
         return faqRepository.save(faq);
     }
 
@@ -43,6 +53,7 @@ public class FaqServiceImpl implements FaqService {
                 .id(faq.getId())
                 .question(faq.getQuestion())
                 .answer(faq.getAnswer())
+                .createdBy(faq.getCreatedBy())
                 .build();
         return faqDto;
     }
@@ -55,7 +66,10 @@ public class FaqServiceImpl implements FaqService {
 
     @Override
     public void updateFaq(FaqDto faqDto) {
+        String username = SecurityUtil.getSessionUser();
+        UserEntity user = userRepository.findByUsername(username);
         Faq faq =  mapToFaq(faqDto);
+        faq.setCreatedBy(user);
         faqRepository.save(faq);
 
     }

@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,4 +24,8 @@ public class Detail {
     private String detail_bunga;
     private String deskripsi_bunga;
     private String harga_bunga;
+
+    @ManyToOne
+    @JoinColumn(name="created_by", nullable = false)
+    private UserEntity createdBy;
 }

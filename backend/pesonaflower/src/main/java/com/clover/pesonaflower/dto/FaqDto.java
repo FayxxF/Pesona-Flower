@@ -1,5 +1,6 @@
 package com.clover.pesonaflower.dto;
 
+import com.clover.pesonaflower.models.UserEntity;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Builder;
 import lombok.Data;
@@ -13,4 +14,5 @@ public class FaqDto {
     private String answer;
 //    @NotEmpty(message = "Jawaban tidak boleh kosong")
 
+    private UserEntity createdBy;
 }

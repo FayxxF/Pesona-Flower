@@ -19,4 +19,8 @@ public class Faq {
     private Long id;
     private String question;
     private String answer;
+
+    @ManyToOne
+    @JoinColumn(name="created_by", nullable = false)
+    private UserEntity createdBy;
 }

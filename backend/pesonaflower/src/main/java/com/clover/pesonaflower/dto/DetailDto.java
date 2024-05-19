@@ -1,12 +1,12 @@
 package com.clover.pesonaflower.dto;
 
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.clover.pesonaflower.models.UserEntity;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.web.multipart.MultipartFile;
 
 @Data
 @Builder
@@ -22,4 +22,5 @@ public class DetailDto {
     private String deskripsi_bunga;
     @NotEmpty(message = "Harga Bunga tidak boleh kosong")
     private String harga_bunga;
+    private UserEntity createdBy;
 }
