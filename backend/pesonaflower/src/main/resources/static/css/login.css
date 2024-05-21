@@ -15,7 +15,7 @@
     min-height: 100vh;
 }
 .side-image{
-    background-image: url("/images/real/krisanFC.jpg");
+    background-image: url("/images/krisanFC.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -100,7 +100,7 @@ img{
    color: #5d5076;
  }
  .input-field .input:focus, .input-field .input:valid{
-    border-bottom: 1px solid #743ae1;
+    border-bottom: 1px solid #974B66;
  }
  .submit{
     border: none;
@@ -111,7 +111,7 @@ img{
     transition: .4s;
  }
  .submit:hover{
-    background: rgba(37, 95, 156, 0.937);
+    background: #974B66;
     color: #fff;
  }
  .signin{

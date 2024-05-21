@@ -1,4 +1,4 @@
-// FAQ
+// Navbar
 window.addEventListener('scroll', function() {
     var navbar = document.getElementById('navbar');
     if (window.scrollY > 0) {
@@ -8,6 +8,23 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Login Logo
+window.addEventListener('scroll', function() {
+    const adminLogoPaths = document.querySelectorAll('#adminLogo .adminLogo');
+
+    if (window.scrollY > 0) {
+        adminLogoPaths.forEach(path => {
+            path.setAttribute('fill', 'black');
+        });
+    } else {
+        adminLogoPaths.forEach(path => {
+            path.setAttribute('fill', 'white');
+        });
+    }
+});
+
+
+// FAQ
 const faqs = document.querySelectorAll(".faq");
 
 faqs.forEach((faq) => {
@@ -18,24 +35,16 @@ faqs.forEach((faq) => {
 
 // Mawar
 function change1() {
-    document.getElementById('pic').src='/frontend/images/wAster.jpg';
+    document.getElementById('pic').src='/images/wAster.jpg';
 }
 function change2() {
-    document.getElementById('pic').src='/frontend/images/bAster.jpg';
+    document.getElementById('pic').src='/images/bAster.jpg';
 }
 
 // Krisan
 function kchange1() {
-    document.getElementById('pic2').src='/frontend/images/wKrisan.jpg';
+    document.getElementById('pic2').src='/images/wKrisan.jpg';
 }
 function kchange2() {
-    document.getElementById('pic2').src='/frontend/images/pKrisan.jpg';
-}
-
-document.getElementById("button_detail").onclick = function(){
-    location.href = "detail.html"
-}
-
-document.getElementById("button_about").onclick = function(){
-    location.href = "about.html"
+    document.getElementById('pic2').src='/images/pKrisan.jpg';
 }

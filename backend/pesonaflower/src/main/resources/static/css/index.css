@@ -8,6 +8,7 @@
 
 .nav-link {
     position: relative;
+    text-decoration: none;
 }
 
 .nav-link::after {
@@ -52,7 +53,8 @@
 .navbar {
     background-color: transparent;
     transition: all 0.5s;
-    color:white !important
+    color:white !important;
+    text-decoration: none;
 }
 
 .navbar a {
