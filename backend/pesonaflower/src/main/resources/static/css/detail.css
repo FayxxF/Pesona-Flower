@@ -76,6 +76,10 @@
     padding-bottom: 0.5rem;
     
 }
+.title-detail {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+}
 .circle {
     padding-bottom: 10px;
 }
@@ -116,4 +120,41 @@
 
 .img {
     transition: 0.8s;
+}
+
+.d-flex.align-items-center {
+    display: flex;
+    align-items: center;
+}
+.logo {
+    width: 25px; /* Ubah ukuran sesuai kebutuhan */
+    height: auto;
+    margin-right: 5px; /* Sesuaikan jarak antara logo dan teks */
+}
+.text-pesona {
+    font-size: 1.25rem; /* Sesuaikan ukuran font */
+    margin: 5px; /* Hapus margin bawaan */
+}
+
+.icon-row {
+    display: flex;
+    gap: 10px; /* Sesuaikan jarak antar ikon */
+}
+.svg-container {
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+.svg-container .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.svg-container .icon {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
