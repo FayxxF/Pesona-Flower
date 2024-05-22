@@ -9,10 +9,8 @@ import lombok.Data;
 @Builder
 public class FaqDto {
     private Long id;
+    @NotEmpty(message = "Pertanyaan tidak boleh kosong")
     private String question;
-//    @NotEmpty(message = "Pertanyaan tidak boleh kosong")
+    @NotEmpty(message = "Jawaban tidak boleh kosong")
     private String answer;
-//    @NotEmpty(message = "Jawaban tidak boleh kosong")
-
-    private UserEntity createdBy;
 }

@@ -34,7 +34,6 @@ public class DetailServiceImpl implements DetailService {
         String username = SecurityUtil.getSessionUser();
         UserEntity user = userRepository.findByUsername(username);
         Detail detail = mapToDetail(detailDto);
-        detail.setCreatedBy(user);
         return detailRepository.save(detail);
     }
 
@@ -49,7 +48,6 @@ public class DetailServiceImpl implements DetailService {
         String username = SecurityUtil.getSessionUser();
         UserEntity user = userRepository.findByUsername(username);
         Detail detail = mapToDetail(detailDto);
-        detail.setCreatedBy(user);
         detailRepository.save(detail);
     }
 
@@ -66,7 +64,6 @@ public class DetailServiceImpl implements DetailService {
                 .detail_bunga(detail.getDetail_bunga())
                 .deskripsi_bunga(detail.getDeskripsi_bunga())
                 .harga_bunga(detail.getHarga_bunga())
-                .createdBy(detail.getCreatedBy())
                 .build();
         return detailDto;
     }
@@ -79,7 +76,6 @@ public class DetailServiceImpl implements DetailService {
                 .detail_bunga(detail.getDetail_bunga())
                 .deskripsi_bunga(detail.getDeskripsi_bunga())
                 .harga_bunga(detail.getHarga_bunga())
-                .createdBy(detail.getCreatedBy())
                 .build();
         return detailDto;
 

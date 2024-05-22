@@ -34,7 +34,6 @@ public class FaqServiceImpl implements FaqService {
                 .id(faq.getId())
                 .question(faq.getQuestion())
                 .answer(faq.getAnswer())
-                .createdBy(faq.getCreatedBy())
                 .build();
         return faqDto;
     }
@@ -44,7 +43,6 @@ public class FaqServiceImpl implements FaqService {
         String username = SecurityUtil.getSessionUser();
         UserEntity user = userRepository.findByUsername(username);
         Faq faq = mapToFaq(faqDto);
-        faq.setCreatedBy(user);
         return faqRepository.save(faq);
     }
 
@@ -53,7 +51,6 @@ public class FaqServiceImpl implements FaqService {
                 .id(faq.getId())
                 .question(faq.getQuestion())
                 .answer(faq.getAnswer())
-                .createdBy(faq.getCreatedBy())
                 .build();
         return faqDto;
     }
@@ -69,7 +66,6 @@ public class FaqServiceImpl implements FaqService {
         String username = SecurityUtil.getSessionUser();
         UserEntity user = userRepository.findByUsername(username);
         Faq faq =  mapToFaq(faqDto);
-        faq.setCreatedBy(user);
         faqRepository.save(faq);
 
     }

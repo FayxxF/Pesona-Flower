@@ -21,7 +21,7 @@
                 </a>
             </div>
             <form class="col-md-6 right" role="form" method="post" th:action="@{/detail/{detailId}/edit(detailId=${detail.id})}"
-                  th:object="${detail}">
+                  th:object="${detail}" enctype="multipart/form-data">
                 <div class="input-box">
                     <header style="font-size: 30px; margin-bottom: 20px;">Edit Detail</header>
                     <div class="input-field">
@@ -51,14 +51,18 @@
                         <span>
                             <i class="fa fa-cloud-upload text-light fa-5x" aria-hidden="true"></i>
                         </span>
+                        <img th:src="@{/images/detail/{detailId}/{foto_bunga}(detailId = ${detail.id}, foto_bunga = ${detail.foto_bunga})}" id="thumbnail" alt="no-pict">
                         <input
                                 type="file"
                                 accept="image/*"
                                 class="text-dark"
-                                id="foto_bunga"
-                                name="foto_bunga"
-                                th:field="*{foto_bunga}"
+                                id="newFoto"
+                                name="newFoto"
                                 placeholder="Upload Foto Bunga">
+                        <input
+                                type="hidden"
+                                name="oldFoto"
+                                th:field="*{foto_bunga}">
                     </div>
                     <div class="input-field">
                         <label for="detail_bunga">Detail</label>

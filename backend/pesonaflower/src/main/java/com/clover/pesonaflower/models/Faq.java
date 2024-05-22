@@ -20,7 +20,4 @@ public class Faq {
     private String question;
     private String answer;
 
-    @ManyToOne
-    @JoinColumn(name="created_by", nullable = false)
-    private UserEntity createdBy;
 }

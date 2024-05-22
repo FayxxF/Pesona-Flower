@@ -19,7 +19,7 @@
                     </svg>
                 </a>
             </div>
-            <form class="col-md-6 right" role="form" method="post" th:action="@{/home/create}" th:object="${galeri}">
+            <form class="col-md-6 right" role="form" method="post" th:action="@{/home/create}" th:object="${galeri}" enctype="multipart/form-data">
                 <div class="input-box">
                     <header style="font-size: 30px; margin-bottom: 20px;">Create Bunga Unggulan</header>
                     <div class="input-field">
@@ -42,9 +42,8 @@
                             type="file"
                             accept="image/*"
                             class="text-dark"
-                            id="foto"
-                            name="foto"
-                            th:field="*{foto}"
+                            id="fileFoto"
+                            name="fileFoto"
                             placeholder="Upload Foto Bunga">
                     </div> 
                     <div class="input-field">

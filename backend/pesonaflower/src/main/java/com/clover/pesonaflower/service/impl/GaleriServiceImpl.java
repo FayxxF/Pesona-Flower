@@ -33,7 +33,6 @@ public class GaleriServiceImpl implements GaleriService {
                 .id(galeri.getId())
                 .foto(galeri.getFoto())
                 .nama(galeri.getNama())
-                .createdBy(galeri.getCreatedBy())
                 .build();
         return galeriDto;
     }
@@ -43,7 +42,6 @@ public class GaleriServiceImpl implements GaleriService {
         String username = SecurityUtil.getSessionUser();
         UserEntity user = userRepository.findByUsername(username);
         Galeri galeri = mapToGaleri(galeriDto);
-        galeri.setCreatedBy(user);
         return galeriRepository.save(galeri);
     }
 
@@ -52,7 +50,6 @@ public class GaleriServiceImpl implements GaleriService {
                 .id(galeri.getId())
                 .foto(galeri.getFoto())
                 .nama(galeri.getNama())
-                .createdBy(galeri.getCreatedBy())
                 .build();
         return galeriDto;
     }
@@ -68,7 +65,6 @@ public class GaleriServiceImpl implements GaleriService {
         String username = SecurityUtil.getSessionUser();
         UserEntity user = userRepository.findByUsername(username);
         Galeri galeri = mapToGaleri(galeriDto);
-        galeri.setCreatedBy(user);
         galeriRepository.save(galeri);
     }
 

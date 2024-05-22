@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
 
@@ -21,9 +22,7 @@ public class Galeri {
     private Long id;
     private String nama;
     private String foto;
-    private Date createAt;
+    @Transient
+    private MultipartFile fileFoto;
 
-    @ManyToOne
-    @JoinColumn(name="created_by", nullable = false)
-    private UserEntity createdBy;
 }

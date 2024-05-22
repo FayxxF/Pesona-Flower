@@ -12,9 +12,17 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/db_pesona_flower
     username: postgres
-    password: admin
+    password: 123
   thymeleaf:
     suffix: .html
+  servlet:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
+server:
+  error:
+    whitelabel:
+      enabled: false
 
 
 

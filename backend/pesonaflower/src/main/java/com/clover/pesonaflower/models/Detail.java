@@ -5,8 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.multipart.MultipartFile;
 
-import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -25,7 +25,7 @@ public class Detail {
     private String deskripsi_bunga;
     private String harga_bunga;
 
-    @ManyToOne
-    @JoinColumn(name="created_by", nullable = false)
-    private UserEntity createdBy;
+    @Transient
+    private MultipartFile fileFoto_bunga;
+
 }

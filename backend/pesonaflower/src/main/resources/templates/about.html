@@ -104,7 +104,7 @@
       <div class="faq" th:each="faq: ${faqs}">
         <div class="question">
           <h3 style="margin: 0;" th:text="${faq.question}">Questions</h3>
-          <div th:if="${user.id} == ${faq.createdBy.id}" class="crud me-auto d-flex align-items-center">
+          <div th:if="${user.id}" class="crud me-auto d-flex align-items-center">
             <a th:href="@{/about/{faqId}/edit(faqId = ${faq.id})}">
               <svg style="padding-left: 10px;" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                 <path d="M11.6667 11.6667H10.0001C9.11603 11.6667 8.26818 12.0178 7.64306 12.643C7.01794 13.2681 6.66675 14.1159 6.66675 15V30C6.66675 30.884 7.01794 31.7319 7.64306 32.357C8.26818 32.9821 9.11603 33.3333 10.0001 33.3333H25.0001C25.8841 33.3333 26.732 32.9821 27.3571 32.357C27.9822 31.7319 28.3334 30.884 28.3334 30V28.3333" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />

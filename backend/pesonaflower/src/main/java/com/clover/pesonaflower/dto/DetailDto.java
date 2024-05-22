@@ -14,7 +14,6 @@ public class DetailDto {
     private Long id;
     @NotEmpty(message = "Nama Bunga tidak boleh kosong")
     private String nama_bunga;
-    @NotEmpty(message = "Foto Bunga tidak boleh kosong")
     private String foto_bunga;
     @NotEmpty(message = "Detail Bunga tidak boleh kosong")
     private String detail_bunga;
@@ -23,4 +22,6 @@ public class DetailDto {
     @NotEmpty(message = "Harga Bunga tidak boleh kosong")
     private String harga_bunga;
     private UserEntity createdBy;
+    @Transient
+    private MultipartFile fileFoto_bunga;
 }

@@ -64,7 +64,6 @@ public class FaqController {
             user = userService.findByUsername(username);
             model.addAttribute("user", user);
         }
-        faqDto.setCreatedBy(user);
         faqService.saveFaq(faqDto);
         return "redirect:/about";
     }

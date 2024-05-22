@@ -22,7 +22,7 @@
                     </svg>
                 </a>
             </div>
-            <form role="form" method="post" th:action="@{/detail/create}" th:object="${detail}">
+            <form role="form" method="post" th:action="@{/detail/create}" th:object="${detail}" enctype="multipart/form-data">
                 <div class="input-box">
                     <header style="font-size: 30px; margin-bottom: 20px;">Create Detail</header>
                     <div class="input-field">
@@ -56,9 +56,8 @@
                                 type="file"
                                 accept="image/*"
                                 class="text-dark"
-                                id="foto_bunga"
-                                name="foto_bunga"
-                                th:field="*{foto_bunga}"
+                                id="fileFoto_bunga"
+                                name="fileFoto_bunga"
                                 placeholder="Upload Foto Bunga">
                     </div>
                     <div class="input-field">

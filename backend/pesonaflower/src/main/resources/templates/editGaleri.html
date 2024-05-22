@@ -20,7 +20,7 @@
                 </a>
             </div>
             <form class="col-md-6 right" role="form" method="post" th:action="@{/home/{galeriId}/edit(galeriId=${galeri.id})}"
-            th:object="${galeri}">
+            th:object="${galeri}" enctype="multipart/form-data">
                 <div class="input-box">
                     <header style="font-size: 30px; margin-bottom: 20px;">Edit Bunga Unggulan</header>
                     <div class="input-field">
@@ -39,14 +39,18 @@
                         <span>
                             <i class="fa fa-cloud-upload text-light fa-5x" aria-hidden="true"></i>
                         </span>
+                        <img th:src="@{/images/galeri/{galeriId}/{foto}(galeriId = ${galeri.id}, foto=${galeri.foto})}" id="thumbnail" alt="no-pict">
                         <input
                             type="file"
                             accept="image/*"
                             class="text-dark"
-                            id="foto"
-                            name="foto"
-                            th:field="*{foto}"
+                            id="newFoto"
+                            name="newFoto"
                             placeholder="Upload Foto Bunga">
+                        <input
+                            type="hidden"
+                            name="oldFoto"
+                            th:field="*{foto}">
                     </div> 
                     <div class="input-field">
                         <input type="submit" class="submit" value="Edit">
